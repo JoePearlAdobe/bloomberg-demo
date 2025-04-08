@@ -175,7 +175,7 @@ pre {
 }
 
 main {
-  padding-top: calc(var(--nav-height) + 100px);
+  padding-top: calc(var(--nav-height) + 40px);
 }
 
 main > div {
