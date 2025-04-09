@@ -5,17 +5,38 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
  * @param {Element} block The image-caption block element
  */
 export default function decorate(block) {
-  // Default to center alignment if no specific alignment class is present
-  const hasPositionClass = block.classList.contains('left') || 
-                          block.classList.contains('center') || 
-                          block.classList.contains('right');
-  if (!hasPositionClass) {
-    block.classList.add('center');
+  // Parse block parameters
+  const blockParams = block.classList.value
+    .split(' ')
+    .find((cls) => cls !== 'image-caption' && cls !== 'block');
+  
+  let blockPosition = 'center';
+  let textAlignment = 'center';
+  
+  if (blockParams) {
+    const params = blockParams.split(',');
+    
+    // First parameter is for block position
+    if (params[0] && ['left', 'center', 'right'].includes(params[0])) {
+      blockPosition = params[0];
+    }
+    
+    // Second parameter is for text alignment
+    if (params[1] && ['left', 'center', 'right'].includes(params[1])) {
+      textAlignment = params[1];
+    }
+    
+    // Remove the original class containing parameters
+    block.classList.remove(blockParams);
   }
+  
+  // Apply position and alignment classes
+  block.classList.add(`position-${blockPosition}`);
+  block.classList.add(`text-${textAlignment}`);
   
   // Add clearfix to parent container for proper float containment
   const parentSection = block.closest('.section');
-  if (parentSection && (block.classList.contains('left') || block.classList.contains('right'))) {
+  if (parentSection && (blockPosition === 'left' || blockPosition === 'right')) {
     parentSection.style.overflow = 'hidden';
   }
   

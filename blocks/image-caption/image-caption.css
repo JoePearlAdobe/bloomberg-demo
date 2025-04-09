@@ -49,53 +49,52 @@
   }
 }
 
-/* Center-aligned variant (default) */
-.image-caption.center {
+/* Block position classes */
+.image-caption.position-center {
   margin-left: auto;
   margin-right: auto;
-  
-  > div {
-    align-items: center;
-    
-    .caption-container {
-      text-align: center;
-    }
-  }
 }
 
-/* Left float variant - entire block floats left */
-.image-caption.left {
+.image-caption.position-left {
   float: left;
   width: 40%;
   margin: 0 30px 20px 0;
-  
-  > div {
-    align-items: flex-start;
-    
-    .caption-container {
-      text-align: left;
-    }
-  }
 }
 
-/* Right float variant - entire block floats right */
-.image-caption.right {
+.image-caption.position-right {
   float: right;
   width: 40%;
   margin: 0 0 20px 30px;
+}
+
+/* Text alignment classes */
+.image-caption.text-center > div {
+  align-items: center;
   
-  > div {
-    align-items: flex-end;
-    
-    .caption-container {
-      text-align: right;
-    }
+  .caption-container {
+    text-align: center;
+  }
+}
+
+.image-caption.text-left > div {
+  align-items: flex-start;
+  
+  .caption-container {
+    text-align: left;
+  }
+}
+
+.image-caption.text-right > div {
+  align-items: flex-end;
+  
+  .caption-container {
+    text-align: right;
   }
 }
 
 /* Responsive adjustments */
 @media (width < 900px) {
-  .image-caption.left, .image-caption.right {
+  .image-caption.position-left, .image-caption.position-right {
     width: 45%;
   }
 }
@@ -114,7 +113,7 @@
   }
   
   /* On mobile, remove float and allow full width */
-  .image-caption.left, .image-caption.right {
+  .image-caption.position-left, .image-caption.position-right {
     float: none;
     width: 100%;
     margin: 15px auto;
