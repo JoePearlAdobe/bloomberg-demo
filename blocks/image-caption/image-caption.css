@@ -9,15 +9,20 @@
   margin: 20px 0;
   max-width: 1200px;
 
+  /* Clearfix for floated elements */
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
   > div {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     width: 100%;
-
+    
     .image-container {
       width: 100%;
-      max-width: 1200px;
       
       picture, picture img {
         width: 100%;
@@ -44,7 +49,7 @@
   }
 }
 
-/* Center-aligned variant */
+/* Center-aligned variant (default) */
 .image-caption.center {
   margin-left: auto;
   margin-right: auto;
@@ -58,10 +63,11 @@
   }
 }
 
-/* Left-aligned variant */
+/* Left float variant - entire block floats left */
 .image-caption.left {
-  margin-right: auto;
-  margin-left: 0;
+  float: left;
+  width: 40%;
+  margin: 0 30px 20px 0;
   
   > div {
     align-items: flex-start;
@@ -72,7 +78,28 @@
   }
 }
 
+/* Right float variant - entire block floats right */
+.image-caption.right {
+  float: right;
+  width: 40%;
+  margin: 0 0 20px 30px;
+  
+  > div {
+    align-items: flex-end;
+    
+    .caption-container {
+      text-align: right;
+    }
+  }
+}
+
 /* Responsive adjustments */
+@media (width < 900px) {
+  .image-caption.left, .image-caption.right {
+    width: 45%;
+  }
+}
+
 @media (width < 768px) {
   .image-caption {
     margin: 15px auto;
@@ -86,9 +113,11 @@
     }
   }
   
-  /* Ensure left alignment respects page margins on mobile */
-  .image-caption.left {
-    margin-left: auto;
+  /* On mobile, remove float and allow full width */
+  .image-caption.left, .image-caption.right {
+    float: none;
+    width: 100%;
+    margin: 15px auto;
     padding: 0 15px;
   }
 }

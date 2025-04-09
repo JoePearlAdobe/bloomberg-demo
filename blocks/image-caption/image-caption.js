@@ -6,9 +6,17 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
  */
 export default function decorate(block) {
   // Default to center alignment if no specific alignment class is present
-  const hasPositionClass = block.classList.contains('left') || block.classList.contains('center');
+  const hasPositionClass = block.classList.contains('left') || 
+                          block.classList.contains('center') || 
+                          block.classList.contains('right');
   if (!hasPositionClass) {
     block.classList.add('center');
+  }
+  
+  // Add clearfix to parent container for proper float containment
+  const parentSection = block.closest('.section');
+  if (parentSection && (block.classList.contains('left') || block.classList.contains('right'))) {
+    parentSection.style.overflow = 'hidden';
   }
   
   const firstDiv = block.firstElementChild;
