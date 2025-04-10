@@ -68,28 +68,20 @@
 }
 
 /* Text alignment classes */
-.image-caption.text-center > div {
-  align-items: center;
-  
-  .caption-container {
-    text-align: center;
-  }
+.image-caption .caption-container {
+  width: 100%;
 }
 
-.image-caption.text-left > div {
-  align-items: flex-start;
-  
-  .caption-container {
-    text-align: left;
-  }
+.image-caption.text-center .caption-container {
+  text-align: center;
 }
 
-.image-caption.text-right > div {
-  align-items: flex-end;
-  
-  .caption-container {
-    text-align: right;
-  }
+.image-caption.text-left .caption-container {
+  text-align: left;
+}
+
+.image-caption.text-right .caption-container {
+  text-align: right;
 }
 
 /* Responsive adjustments */
