@@ -15,6 +15,29 @@ import {
   sampleRUM,
 } from './aem.js';
 
+const experimentationConfig = {
+  prodHost: 'main--bloomberg-demo--joepearladobe.aem.live',
+  audiences: {
+    mobile: () => window.innerWidth < 600,
+    desktop: () => window.innerWidth >= 600,
+    // define your custom audiences here as needed
+  }
+};
+
+
+
+let runExperimentation;
+let showExperimentationOverlay;
+const isExperimentationEnabled = document.head.querySelector('[name^="experiment"],[name^="campaign-"],[name^="audience-"],[property^="campaign:"],[property^="audience:"]')
+    || [...document.querySelectorAll('.section-metadata div')].some((d) => d.textContent.match(/Experiment|Campaign|Audience/i));
+if (isExperimentationEnabled) {
+  ({
+    loadEager: runExperimentation,
+    loadLazy: showExperimentationOverlay,
+  } = await import('../plugins/experimentation/src/index.js'));
+}
+
+
 /**
  * Moves all the attributes from a given elmenet to another given element.
  * @param {Element} from the element to copy attributes from
@@ -124,6 +147,12 @@ async function loadEager(doc) {
   if (getMetadata('breadcrumbs').toLowerCase() === 'true') {
     doc.body.dataset.breadcrumbs = true;
   }
+
+
+    if (runExperimentation) {
+      await runExperimentation(document, experimentationConfig);
+    }
+  }
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
@@ -141,7 +170,7 @@ async function loadEager(doc) {
   } catch (e) {
     // do nothing
   }
-}
+
 
 /**
  * Loads everything that doesn't need to be delayed.
@@ -162,6 +191,11 @@ async function loadLazy(doc) {
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
+}
+
+if (showExperimentationOverlay) {
+  await showExperimentationOverlay(document, experimentationConfig);
+}
 }
 
 /**
