@@ -5,32 +5,35 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
  * @param {Element} block The image-caption block element
  */
 export default function decorate(block) {
-  // Parse block parameters
-  const blockParams = block.classList.value
-    .split(' ')
-    .find((cls) => cls !== 'image-caption' && cls !== 'block');
-  
+  // Get block variant parameters - in AEM, variant is the second class name
+  // Default to center position and center text alignment if not specified
   let blockPosition = 'center';
   let textAlignment = 'center';
   
-  if (blockParams) {
-    const params = blockParams.split(',');
+  // Find all classes that aren't 'block' or 'image-caption'
+  const classes = Array.from(block.classList).filter(
+    cls => cls !== 'block' && cls !== 'image-caption'
+  );
+  
+  // If we have any classes, the first one should be our parameter string
+  if (classes.length > 0) {
+    const variantParams = classes[0].split(',');
     
     // First parameter is for block position
-    if (params[0] && ['left', 'center', 'right'].includes(params[0])) {
-      blockPosition = params[0];
+    if (variantParams[0] && ['left', 'center', 'right'].includes(variantParams[0])) {
+      blockPosition = variantParams[0];
     }
     
     // Second parameter is for text alignment
-    if (params[1] && ['left', 'center', 'right'].includes(params[1])) {
-      textAlignment = params[1];
+    if (variantParams[1] && ['left', 'center', 'right'].includes(variantParams[1])) {
+      textAlignment = variantParams[1];
     }
     
-    // Remove the original class containing parameters
-    block.classList.remove(blockParams);
+    // Clean up classes - remove all non-standard classes
+    classes.forEach(cls => block.classList.remove(cls));
   }
   
-  // Apply position and alignment classes
+  // Add the correct position and alignment classes
   block.classList.add(`position-${blockPosition}`);
   block.classList.add(`text-${textAlignment}`);
   

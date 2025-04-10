@@ -1,8 +1,9 @@
 .section .image-caption-wrapper {
-  padding: 0;
-  margin: 40px auto;
-  max-width: 1224px;
+  position: relative;
   width: 100%;
+  max-width: 1224px;
+  margin: 40px auto;
+  padding: 0;
 }
 
 .image-caption {
@@ -17,9 +18,10 @@
   }
 
   > div {
-    display: flex;
-    flex-direction: column;
     width: 100%;
+    
+    /* Remove flex layout */
+    display: block;
     
     .image-container {
       width: 100%;
@@ -50,21 +52,23 @@
 }
 
 /* Block position classes */
-.image-caption.position-center {
+.section .image-caption.position-center {
   margin-left: auto;
   margin-right: auto;
 }
 
-.image-caption.position-left {
+.section .image-caption.position-left {
   float: left;
   width: 40%;
   margin: 0 30px 20px 0;
+  clear: left;
 }
 
-.image-caption.position-right {
+.section .image-caption.position-right {
   float: right;
   width: 40%;
   margin: 0 0 20px 30px;
+  clear: right;
 }
 
 /* Text alignment classes */
@@ -72,21 +76,22 @@
   width: 100%;
 }
 
-.image-caption.text-center .caption-container {
+.section .image-caption.text-center .caption-container {
   text-align: center;
 }
 
-.image-caption.text-left .caption-container {
+.section .image-caption.text-left .caption-container {
   text-align: left;
 }
 
-.image-caption.text-right .caption-container {
+.section .image-caption.text-right .caption-container {
   text-align: right;
 }
 
 /* Responsive adjustments */
 @media (width < 900px) {
-  .image-caption.position-left, .image-caption.position-right {
+  .section .image-caption.position-left, 
+  .section .image-caption.position-right {
     width: 45%;
   }
 }
@@ -105,7 +110,8 @@
   }
   
   /* On mobile, remove float and allow full width */
-  .image-caption.position-left, .image-caption.position-right {
+  .section .image-caption.position-left, 
+  .section .image-caption.position-right {
     float: none;
     width: 100%;
     margin: 15px auto;

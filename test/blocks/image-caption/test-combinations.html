@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Caption Block - Test Combinations</title>
+  <link rel="stylesheet" href="../../../styles/styles.css">
+  <link rel="stylesheet" href="../../../blocks/image-caption/image-caption.css">
+  <style>
+    body {
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    .test-case {
+      margin-bottom: 50px;
+      border-top: 1px solid #ccc;
+      padding-top: 20px;
+    }
+    .test-label {
+      background-color: #f0f0f0;
+      padding: 8px;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+    .filler-text {
+      margin-bottom: 20px;
+    }
+    .section {
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Image Caption Block - Test Combinations</h1>
+  <p>This page tests all possible combinations of block position and text alignment for the image-caption block.</p>
+
+  <!-- Center Block Position Tests -->
+  <h2>Center Block Position Tests</h2>
+
+  <div class="test-case">
+    <div class="test-label">Center Block, Left-Aligned Text [image-caption="center,left"]</div>
+    <div class="filler-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis semper nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+    </div>
+    
+    <div class="section">
+      <div class="image-caption position-center text-left">
+        <div>
+          <div class="image-container">
+            <picture>
+              <img src="https://placehold.co/800x500/blue/white?text=Sample+Image" alt="Sample image" width="800" height="500">
+            </picture>
+          </div>
+          <div class="caption-container">
+            <p>This is a center-positioned block with left-aligned caption text. The text should align to the left of the image.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="filler-text">
+      Nullam eget magna eu nisi lobortis tincidunt. Suspendisse potenti. Praesent sit amet dignissim magna. Proin consectetur odio at feugiat rhoncus. Suspendisse id consectetur velit.
+    </div>
+  </div>
+
+  <div class="test-case">
+    <div class="test-label">Center Block, Center-Aligned Text [image-caption="center,center"]</div>
+    <div class="filler-text">
+      Cras ultricies ligula sed magna dictum porta. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui posuere blandit.
+    </div>
+    
+    <div class="section">
+      <div class="image-caption position-center text-center">
+        <div>
+          <div class="image-container">
+            <picture>
+              <img src="https://placehold.co/800x500/green/white?text=Sample+Image" alt="Sample image" width="800" height="500">
+            </picture>
+          </div>
+          <div class="caption-container">
+            <p>This is a center-positioned block with center-aligned caption text. The text should be centered below the image.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="filler-text">
+      Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget malesuada.
+    </div>
+  </div>
+
+  <div class="test-case">
+    <div class="test-label">Center Block, Right-Aligned Text [image-caption="center,right"]</div>
+    <div class="filler-text">
+      Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed.
+    </div>
+    
+    <div class="section">
+      <div class="image-caption position-center text-right">
+        <div>
+          <div class="image-container">
+            <picture>
+              <img src="https://placehold.co/800x500/red/white?text=Sample+Image" alt="Sample image" width="800" height="500">
+            </picture>
+          </div>
+          <div class="caption-container">
+            <p>This is a center-positioned block with right-aligned caption text. The text should align to the right of the image.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="filler-text">
+      Nulla quis lorem ut libero malesuada feugiat. Sed porttitor lectus nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.
+    </div>
+  </div>
+
+  <!-- Left Block Position Tests -->
+  <h2>Left Block Position Tests</h2>
+
+  <div class="test-case">
+    <div class="test-label">Left Block, Left-Aligned Text [image-caption="left,left"]</div>
+    <div class="filler-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis semper nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+    </div>
+    
+    <div class="section">
+      <div class="image-caption position-left text-left">
+        <div>
+          <div class="image-container">
+            <picture>
+              <img src="https://placehold.co/800x500/purple/white?text=Sample+Image" alt="Sample image" width="800" height="500">
+            </picture>
+          </div>
+          <div class="caption-container">
+            <p>This is a left-positioned block with left-aligned caption text. The text should align to the left within a left-floating block.</p>
+          </div>
+        </div>
+      </div>
+      <div class="filler-text">
+        Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur aliquet quam id dui posuere blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </div>
+    </div>
+  </div>
+
+  <div class="test-case">
+    <div class="test-label">Left Block, Center-Aligned Text [image-caption="left,center"]</div>
+    <div class="filler-text">
+      Cras ultricies ligula sed magna dictum porta. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui posuere blandit.
+    </div>
+    
+    <div class="section">
+      <div class="image-caption position-left text-center">
+        <div>
+          <div class="image-container">
+            <picture>
+              <img src="https://placehold.co/800x500/orange/white?text=Sample+Image" alt="Sample image" width="800" height="500">
+            </picture>
+          </div>
+          <div class="caption-container">
+            <p>This is a left-positioned block with center-aligned caption text. The text should be centered within a left-floating block.</p>
+          </div>
+        </div>
+      </div>
+      <div class="filler-text">
+        Proin eget tortor risus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec sollicitudin molestie malesuada. Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Donec rutrum congue leo eget malesuada. Nulla porttitor accumsan tincidunt. Nulla quis lorem ut libero malesuada feugiat. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget malesuada.
+      </div>
+    </div>
+  </div>
+
+  <div class="test-case">
+    <div class="test-label">Left Block, Right-Aligned Text [image-caption="left,right"]</div>
+    <div class="filler-text">
+      Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed.
+    </div>
+    
+    <div class="section">
+      <div class="image-caption position-left text-right">
+        <div>
+          <div class="image-container">
+            <picture>
+              <img src="https://placehold.co/800x500/teal/white?text=Sample+Image" alt="Sample image" width="800" height="500">
+            </picture>
+          </div>
+          <div class="caption-container">
+            <p>This is a left-positioned block with right-aligned caption text. The text should align to the right within a left-floating block.</p>
+          </div>
+        </div>
+      </div>
+      <div class="filler-text">
+        Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur aliquet quam id dui posuere blandit. Nulla quis lorem ut libero malesuada feugiat. Nulla porttitor accumsan tincidunt. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Block Position Tests -->
+  <h2>Right Block Position Tests</h2>
+
+  <div class="test-case">
+    <div class="test-label">Right Block, Left-Aligned Text [image-caption="right,left"]</div>
+    <div class="filler-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis semper nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+    </div>
+    
+    <div class="section">
+      <div class="image-caption position-right text-left">
+        <div>
+          <div class="image-container">
+            <picture>
+              <img src="https://placehold.co/800x500/yellow/black?text=Sample+Image" alt="Sample image" width="800" height="500">
+            </picture>
+          </div>
+          <div class="caption-container">
+            <p>This is a right-positioned block with left-aligned caption text. The text should align to the left within a right-floating block.</p>
+          </div>
+        </div>
+      </div>
+      <div class="filler-text">
+        Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur aliquet quam id dui posuere blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </div>
+    </div>
+  </div>
+
+  <div class="test-case">
+    <div class="test-label">Right Block, Center-Aligned Text [image-caption="right,center"]</div>
+    <div class="filler-text">
+      Cras ultricies ligula sed magna dictum porta. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui posuere blandit.
+    </div>
+    
+    <div class="section">
+      <div class="image-caption position-right text-center">
+        <div>
+          <div class="image-container">
+            <picture>
+              <img src="https://placehold.co/800x500/brown/white?text=Sample+Image" alt="Sample image" width="800" height="500">
+            </picture>
+          </div>
+          <div class="caption-container">
+            <p>This is a right-positioned block with center-aligned caption text. The text should be centered within a right-floating block.</p>
+          </div>
+        </div>
+      </div>
+      <div class="filler-text">
+        Proin eget tortor risus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec sollicitudin molestie malesuada. Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Donec rutrum congue leo eget malesuada. Nulla porttitor accumsan tincidunt. Nulla quis lorem ut libero malesuada feugiat. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.
+      </div>
+    </div>
+  </div>
+
+  <div class="test-case">
+    <div class="test-label">Right Block, Right-Aligned Text [image-caption="right,right"]</div>
+    <div class="filler-text">
+      Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed.
+    </div>
+    
+    <div class="section">
+      <div class="image-caption position-right text-right">
+        <div>
+          <div class="image-container">
+            <picture>
+              <img src="https://placehold.co/800x500/pink/white?text=Sample+Image" alt="Sample image" width="800" height="500">
+            </picture>
+          </div>
+          <div class="caption-container">
+            <p>This is a right-positioned block with right-aligned caption text. The text should align to the right within a right-floating block.</p>
+          </div>
+        </div>
+      </div>
+      <div class="filler-text">
+        Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur aliquet quam id dui posuere blandit. Nulla quis lorem ut libero malesuada feugiat. Nulla porttitor accumsan tincidunt. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary Section -->
+  <div class="test-case">
+    <h2>Summary</h2>
+    <p>This test page demonstrates all nine possible combinations of the image-caption block:</p>
+    <ul>
+      <li><strong>Block Position:</strong> left, center, right</li>
+      <li><strong>Text Alignment:</strong> left, center, right</li>
+    </ul>
+    <p>To use these combinations in your content, format your block declaration as follows:</p>
+    <pre>[image-caption="blockPosition,textAlignment"]</pre>
+    <p>For example: <code>[image-caption="right,left"]</code> creates a right-positioned block with left-aligned text.</p>
+  </div>
+
+  <!-- Footer Section -->
+  <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #ccc;">
+    <p>This is a test page for the image-caption block. The block supports responsive behavior and will reflow on smaller screens.</p>
+    <p>To test responsive behavior, resize your browser window or view on a mobile device.</p>
+  </footer>
+
+</body>
+</html>
