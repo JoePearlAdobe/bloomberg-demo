@@ -124,6 +124,9 @@ function buildAutoBlocks(main) {
   }
 }
 
+/** add code for adding block for auto blocks */
+
+
 /**
  * Decorates all sections in a container element.
  * @param {Element} main The container element
