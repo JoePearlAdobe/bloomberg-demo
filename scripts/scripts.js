@@ -174,10 +174,7 @@ async function loadLazy(doc) {
   loadFonts();
 }
 
-if (showExperimentationOverlay) {
-  await showExperimentationOverlay(document, experimentationConfig);
-}
-}
+
 
 /**
  * Loads everything that happens a lot later,
