@@ -6,6 +6,7 @@ indices:
       - '/blog-articles/**'
     exclude:
       - '**/drafts/**'
+      - '**/docs/**'
       - '**/fragments/**'
       - '**/tools/**'
     target: /blog-articles/query-index.json
