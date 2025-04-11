@@ -7,7 +7,6 @@ import {
   decorateBlocks,
   decorateTemplateAndTheme,
   getMetadata,
-  getAllMetadata,
   waitForFirstImage,
   loadSection,
   loadSections,
