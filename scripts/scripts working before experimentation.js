@@ -184,20 +184,6 @@ async function loadEager(doc) {
     doc.body.classList.add('appear');
     await loadSection(main.querySelector('.section'), waitForFirstImage);
   }
-  
-  /** added instrument experimentation plugin */
-  
-  // Instrument experimentation plugin
-  if (
-    getMetadata('experiment') ||
-    Object.keys(getAllMetadata('campaign')).length ||
-    Object.keys(getAllMetadata('audience')).length
-  ) {
-    // eslint-disable-next-line import/no-relative-packages
-    const { loadEager: runEager } = await import('../plugins/experimentation/src/index.js');
-    await runEager(document, { audiences: AUDIENCES }, pluginContext);
-
-    /** end of add */
 
   sampleRUM.enhance();
 
@@ -230,21 +216,6 @@ async function loadLazy(doc) {
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
-
-/** added exp pill */
-    // Implement experimentation preview pill
-    if (
-      getMetadata('experiment') ||
-      Object.keys(getAllMetadata('campaign')).length ||
-      Object.keys(getAllMetadata('audience')).length
-    ) {
-      // eslint-disable-next-line import/no-relative-packages
-      const { loadLazy: runLazy } = await import('../plugins/experimentation/src/index.js');
-      await runLazy(document, { audiences: AUDIENCES }, pluginContext);
-    }
-
-/** end of add */
-
 }
 
 /**
