@@ -7,7 +7,6 @@ import {
   decorateBlocks,
   decorateTemplateAndTheme,
   getMetadata,
-  getAllMetadata,
   waitForFirstImage,
   loadSection,
   loadSections,
@@ -17,16 +16,6 @@ import {
   toClassName,
   toCamelCase,
 } from './aem.js';
-
-// Define audiences configuration for experimentation plugin
-const AUDIENCES = {};
-
-// Define plugin context for experimentation
-const pluginContext = {
-  getMetadata,
-  getAllMetadata,
-  loadCSS,
-};
 
 /**
  * Moves all the attributes from a given elmenet to another given element.
@@ -195,17 +184,6 @@ async function loadEager(doc) {
     doc.body.classList.add('appear');
     await loadSection(main.querySelector('.section'), waitForFirstImage);
   }
-  
-  // Instrument experimentation plugin
-  if (
-    getMetadata('experiment') ||
-    Object.keys(getAllMetadata('campaign')).length ||
-    Object.keys(getAllMetadata('audience')).length
-  ) {
-    // eslint-disable-next-line import/no-relative-packages
-    const { loadEager: runEager } = await import('../plugins/experimentation/src/index.js');
-    await runEager(document, { audiences: AUDIENCES }, pluginContext);
-  }
 
   sampleRUM.enhance();
 
@@ -238,18 +216,6 @@ async function loadLazy(doc) {
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
-
-  // Implement experimentation preview pill
-  if (
-    getMetadata('experiment') ||
-    Object.keys(getAllMetadata('campaign')).length ||
-    Object.keys(getAllMetadata('audience')).length
-  ) {
-    // eslint-disable-next-line import/no-relative-packages
-    const { loadLazy: runLazy } = await import('../plugins/experimentation/src/index.js');
-    await runLazy(document, { audiences: AUDIENCES }, pluginContext);
-  }
-
 }
 
 /**
