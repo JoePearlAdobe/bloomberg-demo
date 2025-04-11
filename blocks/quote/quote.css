@@ -1,7 +1,29 @@
+/* Default quote styling */
 .quote blockquote {
   margin: 0 auto;
   padding: 0 24px;
   max-width: 900px;
+}
+
+/* Narrow variant - 35% of page width */
+.quote.narrow blockquote {
+  max-width: 35%;
+  margin: 0 auto;
+}
+
+/* Wide variant - 85% of page width */
+.quote.wide blockquote {
+  max-width: 85%;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments for mobile */
+@media (width < 900px) {
+  .quote.narrow blockquote,
+  .quote.wide blockquote {
+    max-width: calc(100% - 48px);  /* Full width minus padding on mobile */
+    padding: 0 24px;
+  }
 }
 
 @media (width >= 900px) {
