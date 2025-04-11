@@ -185,7 +185,7 @@ async function loadEager(doc) {
     await loadSection(main.querySelector('.section'), waitForFirstImage);
   }
   
-  /** added instrument experimentation plugin */
+  // added instrument experimentation plugin
   
   // Instrument experimentation plugin
   if (
@@ -197,7 +197,7 @@ async function loadEager(doc) {
     const { loadEager: runEager } = await import('../plugins/experimentation/src/index.js');
     await runEager(document, { audiences: AUDIENCES }, pluginContext);
 
-    /** end of add */
+    // end of add 
 
   sampleRUM.enhance();
 
@@ -231,7 +231,7 @@ async function loadLazy(doc) {
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
 
-/** added exp pill */
+// added exp pill
     // Implement experimentation preview pill
     if (
       getMetadata('experiment') ||
@@ -243,7 +243,7 @@ async function loadLazy(doc) {
       await runLazy(document, { audiences: AUDIENCES }, pluginContext);
     }
 
-/** end of add */
+// end of add 
 
 }
 
