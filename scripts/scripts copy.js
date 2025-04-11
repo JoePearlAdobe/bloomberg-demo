@@ -4,6 +4,7 @@ import {
   loadFooter,
   decorateButtons,
   decorateIcons,
+  decorateSections,
   decorateBlocks,
   decorateTemplateAndTheme,
   getMetadata,
@@ -12,10 +13,11 @@ import {
   loadSections,
   loadCSS,
   sampleRUM,
-  readBlockConfig,
-  toClassName,
-  toCamelCase,
 } from './aem.js';
+
+
+
+
 
 /**
  * Moves all the attributes from a given elmenet to another given element.
@@ -103,58 +105,6 @@ function buildAutoBlocks(main) {
 }
 
 /**
- * Decorates all sections in a container element.
- * @param {Element} main The container element
- */
-function decorateSections(main) {
-  main.querySelectorAll(':scope > div').forEach((section) => {
-    const wrappers = [];
-    let defaultContent = false;
-    [...section.children].forEach((e) => {
-      if (e.classList.contains('richtext')) {
-        e.removeAttribute('class');
-        if (!defaultContent) {
-          const wrapper = document.createElement('div');
-          wrapper.classList.add('default-content-wrapper');
-          wrappers.push(wrapper);
-          defaultContent = true;
-        }
-      } else if (e.tagName === 'DIV' || !defaultContent) {
-        const wrapper = document.createElement('div');
-        wrappers.push(wrapper);
-        defaultContent = e.tagName !== 'DIV';
-        if (defaultContent) wrapper.classList.add('default-content-wrapper');
-      }
-      wrappers[wrappers.length - 1].append(e);
-    });
-
-    // Add wrapped content back
-    wrappers.forEach((wrapper) => section.append(wrapper));
-    section.classList.add('section');
-    section.dataset.sectionStatus = 'initialized';
-    section.style.display = 'none';
-
-    // Process section metadata
-    const sectionMeta = section.querySelector('div.section-metadata');
-    if (sectionMeta) {
-      const meta = readBlockConfig(sectionMeta);
-      Object.keys(meta).forEach((key) => {
-        if (key === 'style') {
-          const styles = meta.style
-            .split(',')
-            .filter((style) => style)
-            .map((style) => toClassName(style.trim()));
-          styles.forEach((style) => section.classList.add(style));
-        } else {
-          section.dataset[toCamelCase(key)] = meta[key];
-        }
-      });
-      sectionMeta.parentNode.remove();
-    }
-  });
-}
-
-/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
@@ -178,6 +128,12 @@ async function loadEager(doc) {
   if (getMetadata('breadcrumbs').toLowerCase() === 'true') {
     doc.body.dataset.breadcrumbs = true;
   }
+
+
+    if (runExperimentation) {
+      await runExperimentation(document, experimentationConfig);
+    }
+  }
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
@@ -195,7 +151,7 @@ async function loadEager(doc) {
   } catch (e) {
     // do nothing
   }
-}
+
 
 /**
  * Loads everything that doesn't need to be delayed.
@@ -217,6 +173,8 @@ async function loadLazy(doc) {
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
 }
+
+
 
 /**
  * Loads everything that happens a lot later,
