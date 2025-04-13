@@ -26,7 +26,11 @@ export default async function decorate(block) {
     const imageDiv = document.createElement('div');
     imageDiv.className = 'blog-item-image';
     if (article.image) {
-      const optimizedPic = createOptimizedPicture(article.image, article.title, false, [{ width: '750' }]);
+      // Construct full image URL if it's a relative path
+      const imageUrl = article.image.startsWith('http') 
+        ? article.image 
+        : `https://main--bloomberg-demo--joepearladobe.aem.page${article.image}`;
+      const optimizedPic = createOptimizedPicture(imageUrl, article.title, false, [{ width: '750' }]);
       imageDiv.append(optimizedPic);
     }
     

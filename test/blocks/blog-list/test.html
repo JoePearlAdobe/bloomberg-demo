@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog List Block Test</title>
+  <link rel="stylesheet" href="../../../styles/styles.css">
+  <link rel="stylesheet" href="../../../blocks/blog-list/blog-list.css">
+  <style>
+    body {
+      margin: 20px;
+      padding: 20px;
+      font-family: var(--body-font-family);
+    }
+    
+    .test-header {
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #eee;
+    }
+    
+    .test-description {
+      background: #f8f8f8;
+      padding: 15px;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+    
+    .test-case {
+      margin: 40px 0;
+      padding: 20px;
+      border: 1px solid #eee;
+      border-radius: 8px;
+    }
+
+    .viewport-controls {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    .viewport-controls button {
+      margin: 5px;
+      padding: 8px 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .viewport-controls button:hover {
+      background: #f5f5f5;
+    }
+
+    .viewport-size {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    #container {
+      transition: max-width 0.3s ease;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="viewport-controls">
+    <button onclick="setViewport('desktop')">Desktop (>900px)</button>
+    <button onclick="setViewport('tablet')">Tablet (768-900px)</button>
+    <button onclick="setViewport('mobile')">Mobile (<768px)</button>
+    <span class="viewport-size">Current width: <span id="current-width"></span>px</span>
+  </div>
+
+  <div id="container">
+    <div class="test-header">
+      <h1>Blog List Block Test</h1>
+      <p>This page tests the blog-list block functionality and styling</p>
+    </div>
+
+    <div class="test-description">
+      <h2>Responsive Breakpoints</h2>
+      <ul>
+        <li>Desktop: >900px - Full layout with 300px image</li>
+        <li>Tablet: 768-900px - Compact layout with 200px image</li>
+        <li>Mobile: <768px - Stacked layout</li>
+      </ul>
+    </div>
+
+    <div class="test-case">
+      <h3>Default Blog List</h3>
+      <div class="section">
+        <div class="blog-list block">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { decorateBlock, loadBlock } from '../../../scripts/aem.js';
+
+    // Load and initialize the block
+    const blocks = document.querySelectorAll('.blog-list');
+    blocks.forEach((block) => {
+      decorateBlock(block);
+      loadBlock(block);
+    });
+  </script>
+
+  <script>
+    function setViewport(size) {
+      const container = document.getElementById('container');
+      switch(size) {
+        case 'desktop':
+          container.style.maxWidth = '1200px';
+          break;
+        case 'tablet':
+          container.style.maxWidth = '850px';
+          break;
+        case 'mobile':
+          container.style.maxWidth = '400px';
+          break;
+      }
+      updateViewportSize();
+    }
+
+    function updateViewportSize() {
+      const container = document.getElementById('container');
+      document.getElementById('current-width').textContent = container.offsetWidth;
+    }
+
+    // Update size on window resize
+    window.addEventListener('resize', updateViewportSize);
+    // Initial size update
+    updateViewportSize();
+  </script>
+</body>
+</html>
+
