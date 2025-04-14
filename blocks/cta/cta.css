@@ -6,8 +6,8 @@
 }
 
 .cta {
-  width: 600px;
-  height: 200px;
+  width: 500px;
+  height: 300px;
   margin: 0 auto;
   border: 1px solid #e0e0e0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -29,7 +29,7 @@
       max-height: 200px;
       width: auto;
       height: auto;
-      margin: 0 10px;
+      margin: 0 25px;
 
       picture, picture img {
         width: 100%;
