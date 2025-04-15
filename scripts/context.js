@@ -160,7 +160,7 @@ export async function getUserContext() {
       }
     }
   } catch (error) {
-    console.error('Error detecting user context:', error);
+    console.warn('Error detecting user context:', error);
   }
   
   // Log detailed context information to console with formatting
