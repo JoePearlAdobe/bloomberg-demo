@@ -24,13 +24,12 @@ export default async function decorate(block) {
     imageDiv.className = 'blog-item-image';
     if (article.image) {
       // Construct full image URL if it's a relative path
-      const imageUrl = article.image.startsWith('http') 
-        ? article.image 
-        : `https://main--bloomberg-demo--joepearladobe.aem.page${article.image}`;
+      const imageUrl = article.image.startsWith('http')
+        ? article.image: `https://main--bloomberg-demo--joepearladobe.aem.page${article.image}`;
       const optimizedPic = createOptimizedPicture(imageUrl, article.title, false, [{ width: '750' }]);
       imageDiv.append(optimizedPic);
     }
-    
+
     // Create content container
     const contentDiv = document.createElement('div');
     contentDiv.className = 'blog-item-content';
