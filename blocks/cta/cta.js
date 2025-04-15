@@ -11,12 +11,12 @@ export default function decorate(block) {
   // Find the image and content elements
   const pic = block.querySelector('picture');
   const firstDiv = block.firstElementChild;
-  
+
   if (pic) {
     // Handle image section
     const picWrapper = pic.closest('div');
     picWrapper.classList.add('ad-image');
-    
+
     // Optimize the image
     const img = pic.querySelector('img');
     if (img) {
