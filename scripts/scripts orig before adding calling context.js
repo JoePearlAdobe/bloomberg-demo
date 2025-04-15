@@ -17,8 +17,6 @@ import {
   toCamelCase,
 } from './aem.js';
 
-import { getUserContext, userContext } from './context.js';
-
 
 const experimentationConfig = {
   prodHost: 'main--bloomberg-demo--joepearladobe.aem.live',
@@ -198,17 +196,10 @@ export function decorateMain(main) {
 /**
  * Loads everything needed to get to LCP.
  * @param {Element} doc The container element
+ */
 async function loadEager(doc) {
   doc.documentElement.lang = 'en';
   decorateTemplateAndTheme();
-  
-  // Get user context information as early as possible
-  await getUserContext();
-  
-  // Make context globally available
-  window.bloomberg = window.bloomberg || {};
-  window.bloomberg.userContext = userContext;
-  
   if (getMetadata('breadcrumbs').toLowerCase() === 'true') {
     doc.body.dataset.breadcrumbs = true;
   }
@@ -217,7 +208,6 @@ async function loadEager(doc) {
     decorateMain(main);
     doc.body.classList.add('appear');
     await loadSection(main.querySelector('.section'), waitForFirstImage);
-  }
   }
 
   if (runExperimentation) {
@@ -266,21 +256,10 @@ async function loadLazy(doc) {
 /**
  * Loads everything that happens a lot later,
  * without impacting the user experience.
+ */
 function loadDelayed() {
   window.setTimeout(() => import('./delayed.js'), 3000);
   // load anything that can be postponed to the latest here
-  
-  // Add some useful context-based classes to the body element for CSS targeting
-  if (window.bloomberg && window.bloomberg.userContext) {
-    const { device } = window.bloomberg.userContext;
-    if (device.type) {
-      document.body.classList.add(`device-${device.type}`);
-    }
-    if (device.orientation) {
-      document.body.classList.add(`orientation-${device.orientation}`);
-    }
-  }
-}
 }
 
 async function loadSidekick() {
