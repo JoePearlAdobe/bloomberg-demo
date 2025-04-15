@@ -163,8 +163,113 @@ export async function getUserContext() {
     console.error('Error detecting user context:', error);
   }
   
-  // Log the context for debugging
-  console.log('User context:', userContext);
+  // Log detailed context information to console with formatting
+  console.group('%c📊 User Context Information', 'color: #0066cc; font-size: 14px; font-weight: bold;');
+  
+  // Browser Information
+  console.group('%c🌐 Browser', 'color: #009933; font-weight: bold;');
+  console.log(
+    '%cName: %c' + userContext.browser.name + ' ' + userContext.browser.version,
+    'font-weight: bold;',
+    'color: #333; font-weight: normal;'
+  );
+  console.log(
+    '%cEngine: %c' + userContext.browser.engine,
+    'font-weight: bold;',
+    'color: #333; font-weight: normal;'
+  );
+  console.log(
+    '%cUser Agent: %c' + userContext.browser.userAgent,
+    'font-weight: bold;',
+    'color: #666; font-size: 11px; font-weight: normal;'
+  );
+  console.groupEnd();
+  
+  // Device Information
+  console.group('%c📱 Device', 'color: #cc6600; font-weight: bold;');
+  console.log(
+    '%cType: %c' + userContext.device.type.charAt(0).toUpperCase() + userContext.device.type.slice(1),
+    'font-weight: bold;',
+    'color: #333; font-weight: normal;'
+  );
+  console.log(
+    '%cDimensions: %c' + userContext.device.width + 'px × ' + userContext.device.height + 'px',
+    'font-weight: bold;',
+    'color: #333; font-weight: normal;'
+  );
+  console.log(
+    '%cOrientation: %c' + userContext.device.orientation.charAt(0).toUpperCase() + userContext.device.orientation.slice(1),
+    'font-weight: bold;',
+    'color: #333; font-weight: normal;'
+  );
+  console.log(
+    '%cTouch Capable: %c' + (userContext.device.touchCapable ? 'Yes' : 'No'),
+    'font-weight: bold;',
+    `color: ${userContext.device.touchCapable ? '#009933' : '#cc0000'}; font-weight: normal;`
+  );
+  console.groupEnd();
+  
+  // Geography Information
+  console.group('%c🌎 Geography', 'color: #9900cc; font-weight: bold;');
+  if (userContext.geography.source === 'unavailable') {
+    console.log(
+      '%cLocation: %cUnavailable (User denied permission or API failed)',
+      'font-weight: bold;',
+      'color: #cc0000; font-weight: normal;'
+    );
+  } else {
+    console.log(
+      '%cSource: %c' + (userContext.geography.source === 'geolocation' ? 'Browser Geolocation API' : 'IP-based Geolocation'),
+      'font-weight: bold;',
+      'color: #333; font-weight: normal;'
+    );
+    
+    if (userContext.geography.country) {
+      console.log(
+        '%cLocation: %c' + 
+        (userContext.geography.city ? userContext.geography.city + ', ' : '') +
+        (userContext.geography.region ? userContext.geography.region + ', ' : '') +
+        (userContext.geography.country ? userContext.geography.country : ''),
+        'font-weight: bold;',
+        'color: #333; font-weight: normal;'
+      );
+    }
+    
+    if (userContext.geography.latitude && userContext.geography.longitude) {
+      console.log(
+        '%cCoordinates: %c' + 
+        userContext.geography.latitude.toFixed(6) + ', ' + userContext.geography.longitude.toFixed(6),
+        'font-weight: bold;',
+        'color: #666; font-size: 11px; font-weight: normal;'
+      );
+    }
+  }
+  console.groupEnd();
+  
+  // Summary table
+  console.groupCollapsed('%c📋 Summary Table', 'color: #666; font-weight: bold;');
+  console.table({
+    Browser: {
+      Name: userContext.browser.name,
+      Version: userContext.browser.version,
+      Engine: userContext.browser.engine
+    },
+    Device: {
+      Type: userContext.device.type,
+      Width: userContext.device.width + 'px',
+      Height: userContext.device.height + 'px',
+      TouchCapable: userContext.device.touchCapable,
+      Orientation: userContext.device.orientation
+    },
+    Geography: {
+      Available: userContext.geography.source !== 'unavailable',
+      Source: userContext.geography.source,
+      Country: userContext.geography.country || 'N/A'
+    }
+  });
+  console.groupEnd();
+  
+  console.groupEnd(); // End main group
   
   return userContext;
 }
