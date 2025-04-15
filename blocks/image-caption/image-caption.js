@@ -9,7 +9,6 @@ export default function decorate(block) {
   // Default to center position and center text alignment if not specified
   let blockPosition = 'center';
   let textAlignment = 'center';
-  
   // Find all classes that aren't 'block' or 'image-caption'
   const classes = Array.from(block.classList).filter(
     cls => cls !== 'block' && cls !== 'image-caption'
