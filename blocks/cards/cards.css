@@ -10,8 +10,8 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 24px;
 }
 
 /* Card container styling */
@@ -23,6 +23,9 @@
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   overflow: hidden;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 /* Hover effects */
@@ -35,6 +38,10 @@
 .cards .cards-card-body {
   margin: 0;
   padding: 24px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 160px;
 }
 
 /* Typography for headings */
@@ -54,6 +61,7 @@
   line-height: 1.5;
   color: #333333;
   margin: 0 0 16px 0;
+  flex-grow: 1;
 }
 
 /* Card image container */
@@ -67,7 +75,7 @@
 /* Image styling */
 .cards > ul > li img {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
@@ -88,6 +96,7 @@
   padding: 8px 16px;
   border-radius: 4px;
   transition: background-color 0.2s ease;
+  margin-top: auto;
 }
 
 .cards .cards-card-body a.button:hover {
@@ -95,25 +104,33 @@
 }
 
 /* Responsive breakpoints - match Bloomberg's responsive design */
-@media (max-width: 1024px) {
+@media (max-width: 1000px) {
   .cards > ul {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 24px;
   }
   
   .cards {
     padding: 30px 16px;
   }
+  
+  .cards > ul > li img {
+    aspect-ratio: 16 / 9;
+  }
+  
+  .cards .cards-card-body {
+    min-height: 120px;
+  }
 }
 
 @media (max-width: 768px) {
   .cards > ul {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
   .cards > ul {
     grid-template-columns: 1fr;
     grid-gap: 24px;
@@ -125,5 +142,10 @@
   
   .cards .cards-card-body {
     padding: 20px;
+    min-height: 0;
+  }
+  
+  .cards > ul > li img {
+    aspect-ratio: 16 / 9;
   }
 }
