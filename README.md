@@ -2,7 +2,7 @@
 
 This project provides a foundation for starting an AEM Edge Delivery Services project. It includes many common blocks and features a project might need.
 
-## DA compatible
+## DA compatible / Test
 
 This specific repo has been _slightly_ modified to be compatible with DA's live preview.
 
