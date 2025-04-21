@@ -23,10 +23,10 @@
 
     .cta-image {
       flex: none;
-      min-width: 120px;
-      min-height: 120px;
-      max-width: 200px;
-      max-height: 200px;
+      min-width: 140px;
+      min-height: 140px;
+      max-width: 140px;
+      max-height: 140px;
       width: auto;
       height: auto;
       margin: 0 25px;
@@ -40,7 +40,7 @@
 
     .cta-content {
       flex: 1;
-      padding: 15px 10px 15px 0;
+      padding: 20px;
       
       h1, h2, h3 {
         margin-top: 0;
