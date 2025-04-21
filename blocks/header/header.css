@@ -253,10 +253,7 @@ header nav .nav-sections ul > li > ul > li {
     left: -24px;
     width: 200px;
     top: calc(100% + 5px);
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 5px 16px;
     background-color: var(--light-color);
     white-space: initial;
     z-index: 1;

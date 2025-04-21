@@ -20,7 +20,7 @@
 
 .blog-item:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
 }
 
 .blog-item-image {
@@ -44,7 +44,7 @@
 }
 
 .blog-item-content h3 {
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem;
   font-size: 1.5rem;
   color: var(--text-color);
   font-family: var(--heading-font-family);
@@ -69,15 +69,15 @@
   .blog-item {
     grid-template-columns: 1fr;
   }
-  
+
   .blog-item-image {
     min-height: 200px;
   }
-  
+
   .blog-item-content {
     padding: 1rem;
   }
-  
+
   .blog-item-content h3 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;

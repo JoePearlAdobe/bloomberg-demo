@@ -7,7 +7,6 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 export default function decorate(block) {
   // Add a class to identify the block
   block.classList.add('ad-block');
-  
   // Find the image and content elements
   const pic = block.querySelector('picture');
   const firstDiv = block.firstElementChild;
@@ -31,14 +30,14 @@ export default function decorate(block) {
   }
 
   // Handle content section
-  const contentDivs = Array.from(firstDiv.children).filter(div => !div.classList.contains('ad-image'));
+  const contentDivs = Array.from(firstDiv.children).filter((div) => !div.classList.contains('ad-image'));
   if (contentDivs.length > 0) {
     const contentDiv = contentDivs[0];
     contentDiv.classList.add('ad-content');
-    
+
     // Style any links as buttons
     const links = contentDiv.querySelectorAll('a');
-    links.forEach(link => {
+    links.forEach((link) => {
       const parent = link.parentElement;
       if (!parent.classList.contains('button-container')) {
         const buttonContainer = document.createElement('div');

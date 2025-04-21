@@ -10,7 +10,7 @@
   height: 300px;
   margin: 0 auto;
   border: 1px solid #e0e0e0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
   overflow: hidden;
 
   > div {
@@ -19,7 +19,7 @@
     align-items: center;
     height: 100%;
     width: 100%;
-    background-color: #ffffff;
+    background-color: #fff;
 
     .cta-image {
       flex: none;
@@ -41,7 +41,7 @@
     .cta-content {
       flex: 1;
       padding: 15px 10px 15px 0;
-      
+
       h1, h2, h3 {
         margin-top: 0;
         margin-bottom: 8px;
@@ -95,11 +95,11 @@
     > div {
       flex-direction: column;
       padding: 15px;
-      
+
       .cta-image {
         margin: 10px 0;
       }
-      
+
       .cta-content {
         padding: 10px 0;
         text-align: center;

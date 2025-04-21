@@ -17,14 +17,13 @@ import {
   toCamelCase,
 } from './aem.js';
 
-
 const experimentationConfig = {
   prodHost: 'main--bloomberg-demo--joepearladobe.aem.live',
   audiences: {
     mobile: () => window.innerWidth < 600,
     desktop: () => window.innerWidth >= 600,
     // define your custom audiences here as needed
-  }
+  },
 };
 
 let runExperimentation;
@@ -35,9 +34,8 @@ if (isExperimentationEnabled) {
   ({
     loadEager: runExperimentation,
     loadLazy: showExperimentationOverlay,
-  } = await import('../plugins/experimentation/src/index.js'));
+  } = await import('../plugins/experimentation/src/index.js')); // eslint-disable-line import/no-relative-packages
 }
-
 
 /**
  * Moves all the attributes from a given elmenet to another given element.
@@ -125,7 +123,6 @@ function buildAutoBlocks(main) {
 }
 
 /** add code for adding block for auto blocks */
-
 
 /**
  * Decorates all sections in a container element.
@@ -215,8 +212,6 @@ async function loadEager(doc) {
   }
 
   sampleRUM.enhance();
-
-
 
   try {
     /* if desktop (proxy for fast connection) or fonts already loaded, load fonts.css */

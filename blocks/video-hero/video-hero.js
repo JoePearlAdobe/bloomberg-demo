@@ -16,5 +16,5 @@ export default async function decorate(block) {
   videoHeroContainer.className = 'video-hero-container';
 
   block.replaceWith(videoHeroContainer);
-  console.log(cfg);
+  console.log(cfg); // eslint-disable-line no-console
 }

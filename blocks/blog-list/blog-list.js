@@ -1,12 +1,12 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
-import { moveInstrumentation } from '../../scripts/scripts.js';
+
 async function fetchBlogArticles() {
   try {
     const response = await fetch('https://main--bloomberg-demo--joepearladobe.aem.page/blog-articles/query-index.json');
     const data = await response.json();
     return data.data;
   } catch (error) {
-    console.error('Error fetching blog articles:', error);
+    console.error('Error fetching blog articles:', error); // eslint-disable-line no-console
     return [];
   }
 }
@@ -15,7 +15,6 @@ export default async function decorate(block) {
   const articles = await fetchBlogArticles();
   const ul = document.createElement('ul');
   ul.className = 'blog-list';
-  
   articles.forEach((article) => {
     const li = document.createElement('li');
     li.className = 'blog-item';
@@ -25,7 +24,7 @@ export default async function decorate(block) {
     if (article.image) {
       // Construct full image URL if it's a relative path
       const imageUrl = article.image.startsWith('http')
-        ? article.image: `https://main--bloomberg-demo--joepearladobe.aem.page${article.image}`;
+        ? article.image : `https://main--bloomberg-demo--joepearladobe.aem.page${article.image}`;
       const optimizedPic = createOptimizedPicture(imageUrl, article.title, false, [{ width: '750' }]);
       imageDiv.append(optimizedPic);
     }
