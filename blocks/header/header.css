@@ -287,9 +287,9 @@ header nav .nav-tools {
 header nav .nav-tools .button {
   margin: 0;
   border: none;
-  padding: 0.25em;
+  padding: 0.5em 1.0em;
   height: 40px;
-  line-height: 0;
+  color: white;
 }
 
 /* breadcrumbs */
