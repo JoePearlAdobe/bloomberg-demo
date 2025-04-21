@@ -1,1 +1,58 @@
 /* stylelint-disable no-empty-source */
+main > div.section.fragment-container > div.fragment-wrapper {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #C97B18 0%, #FFB521 38%, #FFCC1D 75%);
+    background-size: cover;
+    width: 100%;
+    max-width: unset;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+main > div.section.fragment-container > div.fragment-wrapper > div.section {
+    width: 1216px;
+    margin: 20px 16px;
+
+}
+
+main > div.section.fragment-container > div.fragment-wrapper > div.section a {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+    text-decoration: none;
+}
+
+/**
+remove button styling
+ */
+main > div.section.fragment-container > div.fragment-wrapper p.button-container {
+    margin: unset;
+}
+
+main > div.section.fragment-container > div.fragment-wrapper p.button-container > a {
+    box-sizing: unset;
+    border: unset;
+    border-radius: unset;
+    background: unset;
+    font-style: unset;
+    margin: unset;
+    padding: unset;
+    color: unset;
+}
+
+span.icon.icon-arrow-right {
+    padding-left: 10px;
+    align-items: center;
+}
+
+span.icon.icon-arrow-right > img {
+    width: 16px;
+    height: 16px;
+    max-width: unset;
+}

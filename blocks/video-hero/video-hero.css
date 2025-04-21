@@ -1,0 +1,12 @@
+div.section.video-hero-container, div.section.video-hero-container > div.video-hero-wrapper {
+    margin: 0;
+    padding: 0;
+    background: #000 center;
+    background-size: cover;
+    width: 100%;
+}
+
+div.section.video-hero-container video.video-hero {
+    min-width: 101%;
+    min-height: 100%;
+}
