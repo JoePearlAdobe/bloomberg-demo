@@ -262,6 +262,7 @@ button {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+/* jpearl added comment for demo purposes */
 
 a.button:hover,
 a.button:focus,
