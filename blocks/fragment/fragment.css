@@ -13,6 +13,8 @@ main > div.section.fragment-container > div.fragment-wrapper {
     align-items: center;
     justify-content: center;
     text-align: center;
+    position: relative;
+    z-index: 10;
 }
 
 main > div.section.fragment-container > div.fragment-wrapper > div.section {
