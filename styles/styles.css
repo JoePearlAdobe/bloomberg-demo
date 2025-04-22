@@ -332,6 +332,18 @@ main .section.highlight {
 
 /* template specific styles */
 
+body.product-landing {
+  background-color: #fff;
+}
+
+body.product-landing div.section.centered {
+  text-align: center;
+}
+
+body.product-landing div.section.centered > .default-content-wrapper {
+  max-width: 800px;
+}
+
 body.product-landing main > .section.video-hero-container {
   margin: 0;
 }

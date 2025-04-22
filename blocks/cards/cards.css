@@ -103,6 +103,41 @@
   background-color: #06c;
 }
 
+body.product-landing .cards div.cards-card-body:first-of-type {
+  height: 36px;
+  min-height: unset;
+  max-height: 36px;
+  padding-bottom: 0;
+}
+
+body.product-landing .cards div.cards-card-body:last-of-type {
+  padding-top: 0;
+}
+
+body.product-landing .cards div.cards-card-body:first-of-type img {
+  width: 36px;
+  height: 36px;
+}
+
+body.product-landing .cards div.cards-card-body:first-of-type span.icon {
+  width: 36px;
+  height: 36px;
+}
+
+body.product-landing .cards h4 {
+  color: #232323;
+  font-size: 1.375rem;
+  line-height: 2.125rem;
+  font-weight: 600;
+}
+
+body.product-landing .cards div.cards-card-body p {
+  color: #232323;
+  font-size: 1rem;
+  line-height: 1.875rem;
+  font-weight: 400;
+}
+
 /* Responsive breakpoints - match Bloomberg's responsive design */
 @media (width <= 1000px) {
   .cards > ul {
