@@ -336,6 +336,21 @@ body.product-landing {
   background-color: #fff;
 }
 
+body.product-landing div.section.unsplash {
+  background-image: url('/icons/unsplash.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  max-width: 100vw;
+  color: #fff;
+}
+
+body.product-landing div.section.unsplash > div.default-content-wrapper {
+  padding-top:64px;
+}
+
 body.product-landing div.section.centered {
   text-align: center;
 }
@@ -462,4 +477,15 @@ body.product-landing div.section.cards-container p {
   font-weight: 400;
   font-size: 1.25rem;
   line-height: 2.25rem;
+}
+
+body.product-landing div.default-content-wrapper > h2 {
+  text-align: center;
+  font-weight: 400;
+}
+
+body.product-landing div.default-content-wrapper > h2+p {
+  margin-top: 0;
+  text-align: center;
+  padding-bottom: 70px;
 }

@@ -31,3 +31,29 @@
     order: unset;
   }
 }
+
+body.product-landing .section.unsplash div.columns img {
+  border-radius: 16px;
+  box-shadow: 0 16px 24px #00000025;
+}
+
+body.product-landing .section.unsplash div.columns > div > div:first-of-type {
+  flex-basis: 280px;
+}
+
+body.product-landing .section.unsplash div.columns > div > div:first-of-type p {
+  line-height: 2.25rem;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+body.product-landing .section.unsplash div.columns > div > div:last-of-type {
+  flex-basis: 800px;
+  margin-left: 120px;
+}
+
+body.product-landing .section.unsplash a.button {
+  color: #fff;
+  background-color: #0062dd;
+  font-size: 16px;
+}
