@@ -14,6 +14,19 @@ export default function decorate(block) {
     });
     ul.append(li);
   });
+
+  /* pill variant */
+  if (block.classList.contains('pill')) {
+    [...ul.children].forEach((li) => {
+      const img = li.querySelector('img');
+      const cardBody = li.querySelector('div.cards-card-body');
+      if (img && img.src && cardBody) {
+        cardBody.style.cssText = `background-image: url("${img.src}"); background-size: cover; background-position: center;`;
+        img.remove();
+      }
+    });
+  }
+
   ul.querySelectorAll('picture > img').forEach((img) => {
     const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
     moveInstrumentation(img, optimizedPic.querySelector('img'));
