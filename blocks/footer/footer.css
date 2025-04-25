@@ -3,6 +3,10 @@ footer {
   font-size: var(--body-font-size-xs);
 }
 
+body.product-landing footer {
+  background-color: #fff;
+}
+
 footer .footer > div {
   margin: auto;
   max-width: 1200px;
@@ -11,6 +15,131 @@ footer .footer > div {
 
 footer .footer p {
   margin: 0;
+}
+
+/* primary footer links */
+body.product-landing footer div.section:first-of-type ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body.product-landing footer div.section:first-of-type ul + p {
+  font-size: 14px;
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+body.product-landing footer div.section:first-of-type ul + p > strong a::after {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+  background-image: url('/icons/arrow-right.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  vertical-align: middle;
+}
+
+/* social media links */
+body.product-landing footer div.section:nth-of-type(2) ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #000;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding-top: 14px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 14px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+body.product-landing footer div.section:nth-of-type(2) ul li {
+  flex: 1;
+  text-align: center;
+}
+
+body.product-landing footer div.section:first-of-type ul > li {
+  font-size: 14px;
+  padding-top: 20px;
+}
+
+body.product-landing footer div.section:first-of-type ul ul {
+  display: block;
+  flex: 1;
+}
+
+body.product-landing footer div.section:nth-of-type(3) p {
+  font-size: 12px;
+}
+
+body.product-landing footer div.section:nth-of-type(3) ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+body.product-landing footer div.section:nth-of-type(3) ul > li {
+  font-size: 12px;
+}
+
+body.product-landing footer div.section:nth-of-type(4) img, body.product-landing footer div.section:nth-of-type(4) span {
+  width: 150px;
+  height: 50px;
+}
+
+@media (width <= 767px) {
+  body.product-landing footer div.section:first-of-type ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  body.product-landing footer div.section:first-of-type ul li {
+    flex: 0 0 calc(50% - 10px);
+  }
+
+  body.product-landing footer div.section:first-of-type ul ul {
+    flex: 0 0 100%;
+  }
+
+  body.product-landing footer div.section:first-of-type ul ul li {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  body.product-landing footer div.section:nth-of-type(2) ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  body.product-landing footer div.section:nth-of-type(2) ul li {
+    flex: 0 0 calc(33.33% - 14px);
+  }
+}
+
+@media (width >= 768px) {
+  body.product-landing footer div.section:first-of-type ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  body.product-landing footer div.section:first-of-type ul li {
+    flex: 0 0 calc(25% - 15px);
+  }
 }
 
 @media (width >= 900px) {
