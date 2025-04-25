@@ -1,7 +1,6 @@
 import { readBlockConfig } from '../../scripts/aem.js';
 export default async function decorate(block) {
     const cfg = readBlockConfig(block);
-    console.log(cfg);
     block.parentElement.style.backgroundImage = `url(${cfg.image})`;
 
     const interstitialWrapper = document.createElement('div');
