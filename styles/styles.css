@@ -14,6 +14,7 @@
   /* colors */
    --background-color: black;
   --light-color: #f8f8f8;
+  --light-gray: #f0f0f0;
   --dark-color: #505050;
   --text-color: #131313;
   --link-color: #000;
@@ -139,6 +140,7 @@ body {
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
 body.appear {
@@ -345,6 +347,7 @@ body.product-landing div.section.unsplash {
   width: 100vw;
   max-width: 100vw;
   color: #fff;
+  margin-bottom: 0;
 }
 
 body.product-landing div.section.unsplash > div.default-content-wrapper {
@@ -488,4 +491,14 @@ body.product-landing div.default-content-wrapper > h2+p {
   margin-top: 0;
   text-align: center;
   padding-bottom: 70px;
+}
+
+div.section.light-gray {
+  background-color: var(--light-gray);
+  background-size: cover;
+}
+
+body.product-landing div.section.light-gray {
+  margin: unset;
+  padding: 40px 0;
 }

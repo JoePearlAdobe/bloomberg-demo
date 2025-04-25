@@ -57,3 +57,30 @@ body.product-landing .section.unsplash a.button {
   background-color: #0062dd;
   font-size: 16px;
 }
+
+body.product-landing div.section.light-gray > div + div + div {
+  font-size: 16px;
+  padding-top: 130px;
+}
+
+body.product-landing .columns.percent div {
+  text-align: center;
+}
+
+body.product-landing .columns.percent div > h3 + p {
+  text-align: center;
+  margin: 0 auto;
+}
+
+body.product-landing .columns.percent div > h3 + p + p {
+  font-size: 16px;
+} 
+
+body.product-landing .columns.percent div > h3 + p > strong {
+  color: #0062dd;
+  font-weight: 600;
+  font-size: 64px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
