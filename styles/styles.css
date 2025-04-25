@@ -15,6 +15,7 @@
    --background-color: black;
   --light-color: #f8f8f8;
   --light-gray: #f0f0f0;
+  --cultured: #f4f4f9;
   --dark-color: #505050;
   --text-color: #131313;
   --link-color: #000;
@@ -501,4 +502,14 @@ div.section.light-gray {
 body.product-landing div.section.light-gray {
   margin: unset;
   padding: 40px 0;
+}
+
+body.product-landing div.section.cultured {
+  margin: unset;
+  padding: 40px 0;
+  background-color: var(--cultured);
+}
+
+body.product-landing div.section.cultured > div.fragment-wrapper {
+  background: unset;;
 }

@@ -1,0 +1,93 @@
+div.section.interstitial-container > div.interstitial-wrapper {
+    padding: unset;
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    background-size: 100%;
+    max-width: 704px;
+}
+
+div.section.interstitial-container > div.interstitial-wrapper > div.interstitial {
+    margin: 16px 3.361344537815126%;
+    display: flex;
+    color: #fff;
+    padding: 80px;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+div.section.interstitial-container > div.interstitial-wrapper > div.interstitial h3 {
+    font-size: 1.5rem;
+}
+
+div.section.interstitial-container > div.interstitial-wrapper > div.interstitial a {
+    position: relative;
+    padding-left: 56px;
+    font-size: 0;
+    color: transparent;
+    background-color: unset;
+}
+
+div.section.interstitial-container > div.interstitial-wrapper > div.interstitial a:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 56px;
+    height: 56px;
+    background-image: url(/icons/circle-arrow.svg);
+    background-size: 32px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 1;
+    background-color: #0062dd;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+div.section.interstitial-container > div.interstitial-wrapper > div.interstitial a:hover:before {
+    background-color: #66abff;
+}
+
+div.section.interstitial-container > div.interstitial-wrapper > div.interstitial > div.content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+}
+
+div.section.interstitial-container > div.interstitial-wrapper > div.interstitial > div.content > .cta {
+    transform: translate(-12px);
+    margin: 32px 0;
+}
+
+@media (min-width: 768px) {
+    div.section.interstitial-container > div.interstitial-wrapper > div.interstitial > div.content {
+        flex-direction: row;
+        gap: 32px;
+    }
+
+    div.section.interstitial-container > div.interstitial-wrapper > div.interstitial {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 1024px) {
+    div.section.interstitial-container > div.interstitial-wrapper {
+        max-width: 704px;
+    }
+}
+
+@media (max-width: 1279px) {
+    div.section.interstitial-container > div.interstitial-wrapper {
+        max-width: 964px;
+    }
+}
+
+@media (min-width: 1280px) {
+    div.section.interstitial-container > div.interstitial-wrapper {
+        max-width: 1216px;
+    }
+}
+
