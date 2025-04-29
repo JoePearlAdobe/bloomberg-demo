@@ -85,18 +85,33 @@ body.product-landing .columns.percent div > h3 + p > strong {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Black theme styles */
+body.black {
+  background-color: black;
+  color: white;
+}
+
+body.black a:any-link {
+  color: white;
+  text-decoration: underline;
+}
+
+body.black a:hover {
+  color: #cccccc;
+}
+
 /* Black background variant */
-.body.black-background {
+.columns.black-background {
   background-color: black;
   color: white;
   padding: 2rem;
 }
 
-.body.black-background a:any-link {
+.columns.black-background a:any-link {
   color: white;
   text-decoration: underline;
 }
 
-.body.black-background a:hover {
+.columns.black-background a:hover {
   color: #cccccc;
 }

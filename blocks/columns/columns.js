@@ -1,19 +1,27 @@
 export default function decorate(block) {
   const cols = [...block.firstElementChild.children];
   block.classList.add(`columns-${cols.length}-cols`);
-
+  
   // Check for black background style variant
   const parentSection = block.closest('.section');
   if (parentSection && parentSection.classList.contains('black-background')) {
     block.classList.add('black-background');
+    document.body.classList.add('black');
   }
 
-  // Alternative: check for a specific marker in the block content
-  if (block.querySelector('.black-background-marker')) {
+  // Handle black background and theme markers
+  const blackBackgroundMarker = block.querySelector('.black-background-marker');
+  const blackThemeMarker = block.querySelector('.black-marker');
+
+  if (blackBackgroundMarker) {
     block.classList.add('black-background');
-    // Remove the marker as it's only used for signaling
-    const marker = block.querySelector('.black-background-marker');
-    if (marker) marker.remove();
+    document.body.classList.add('black');
+    blackBackgroundMarker.remove();
+  }
+
+  if (blackThemeMarker) {
+    document.body.classList.add('black');
+    blackThemeMarker.remove();
   }
 
   // setup image columns
