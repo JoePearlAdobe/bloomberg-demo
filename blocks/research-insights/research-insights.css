@@ -1,6 +1,6 @@
 div.research-insights-posts {
     display: flex;
-    flex-direction: column;
+    flex-flow: column;
     gap: 32px;
     padding: 20px;
 }
@@ -17,10 +17,9 @@ div.research-insights-posts > div.research-insights-post {
     min-height: 300px;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
     div.research-insights-posts {
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-flow: row wrap;
     }
     
     div.research-insights-posts > div.research-insights-post {
@@ -60,7 +59,7 @@ a.research-insights-type:hover {
 }
 
 .research-insights-post h3 {
-    margin: 0 0 10px 0;
+    margin: 0 0 10px;
 }
 
 .research-insights-post .button {
@@ -92,9 +91,6 @@ a.research-insights-type:hover {
     font-weight: 600;
     font-size: 14px;
     text-transform: uppercase;
-    text-decoration: underline;
-    text-decoration-color: #0062dd;
-    text-underline-offset: 3px;
     position: absolute;
     bottom: 20px;
     left: 32px;

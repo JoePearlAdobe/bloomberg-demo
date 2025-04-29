@@ -6,6 +6,6 @@ const jumplinksUL = document.querySelector('body.product-landing div.section.jum
 const firstItem = jumplinks.querySelector('li:first-of-type');
 
 firstItem.addEventListener('click', () => {
-    jumplinksUL.classList.toggle('expanded');
-    jumplinks.classList.toggle('expanded');
+  jumplinksUL.classList.toggle('expanded');
+  jumplinks.classList.toggle('expanded');
 });

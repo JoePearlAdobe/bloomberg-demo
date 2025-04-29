@@ -8,7 +8,7 @@ div.section.interstitial-container > div.interstitial-wrapper {
 }
 
 div.section.interstitial-container > div.interstitial-wrapper > div.interstitial {
-    margin: 16px 3.361344537815126%;
+    margin: 16px 3.3613%;
     display: flex;
     color: #fff;
     padding: 80px;
@@ -28,7 +28,7 @@ div.section.interstitial-container > div.interstitial-wrapper > div.interstitial
     background-color: unset;
 }
 
-div.section.interstitial-container > div.interstitial-wrapper > div.interstitial a:before {
+div.section.interstitial-container > div.interstitial-wrapper > div.interstitial a::before {
     content: '';
     position: absolute;
     left: 0;
@@ -36,7 +36,7 @@ div.section.interstitial-container > div.interstitial-wrapper > div.interstitial
     transform: translateY(-50%);
     width: 56px;
     height: 56px;
-    background-image: url(/icons/circle-arrow.svg);
+    background-image: url('/icons/circle-arrow.svg');
     background-size: 32px;
     background-position: center;
     background-repeat: no-repeat;
@@ -47,7 +47,7 @@ div.section.interstitial-container > div.interstitial-wrapper > div.interstitial
     transition: background-color 0.3s ease;
 }
 
-div.section.interstitial-container > div.interstitial-wrapper > div.interstitial a:hover:before {
+div.section.interstitial-container > div.interstitial-wrapper > div.interstitial a:hover::before {
     background-color: #66abff;
 }
 
@@ -62,7 +62,7 @@ div.section.interstitial-container > div.interstitial-wrapper > div.interstitial
     margin: 32px 0;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
     div.section.interstitial-container > div.interstitial-wrapper > div.interstitial > div.content {
         flex-direction: row;
         gap: 32px;
@@ -73,19 +73,19 @@ div.section.interstitial-container > div.interstitial-wrapper > div.interstitial
     }
 }
 
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
     div.section.interstitial-container > div.interstitial-wrapper {
         max-width: 704px;
     }
 }
 
-@media (max-width: 1279px) {
+@media (width <= 1279px) {
     div.section.interstitial-container > div.interstitial-wrapper {
         max-width: 964px;
     }
 }
 
-@media (min-width: 1280px) {
+@media (width >= 1280px) {
     div.section.interstitial-container > div.interstitial-wrapper {
         max-width: 1216px;
     }

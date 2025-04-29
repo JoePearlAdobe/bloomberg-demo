@@ -8,18 +8,18 @@ export default async function decorate(block) {
   videoHero.setAttribute('autoplay', '');
   videoHero.setAttribute('muted', '');
   videoHero.setAttribute('loop', '');
-  
+
   videoHero.classList.add('video-hero');
   const source = document.createElement('source');
   source.setAttribute('src', cfg.video);
   source.setAttribute('type', 'video/mp4');
   videoHero.appendChild(source);
-  
+
   const playButton = document.createElement('button');
   playButton.className = 'video-play-button';
   playButton.innerHTML = 'Play';
   videoHero.appendChild(playButton);
-  
+
   videoHeroContainer.append(videoHero);
   videoHeroContainer.className = 'video-hero-video';
 

@@ -9,7 +9,7 @@ header .nav-wrapper {
   z-index: 20;
   position: sticky;
   top: 30px;
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 header nav {
@@ -107,7 +107,7 @@ header nav.global-nav ul li:nth-of-type(3) a::before {
   background-repeat: no-repeat;
 }
 
-@media (max-width: 1023px) {
+@media (width <= 1023px) {
   header nav.global-nav {
     margin: 0 auto;
     max-width: unset;
@@ -119,8 +119,7 @@ header nav.global-nav ul li:nth-of-type(3) a::before {
   }
 }
 
-@media (max-width: 759px) {
-
+@media (width <= 759px) {
   header nav.global-nav {
     border-bottom: 1px solid #616166;
   }
@@ -144,6 +143,7 @@ header nav.global-nav ul li:nth-of-type(3) a::before {
   header nav.global-nav ul li:nth-of-type(4) {
     display: none;
   }
+  
   header nav.global-nav ul li::after {
     content: unset;
   }

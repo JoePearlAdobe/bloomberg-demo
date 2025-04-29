@@ -198,6 +198,9 @@ div.cards.pill {
 div.cards.pill > ul {
   width: 100%;
   max-width: 100%;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 div.cards.pill div.cards-card-image {
@@ -227,7 +230,7 @@ div.cards.pill div.cards-card-body {
   position: relative;
 }
 
-div.cards.pill div.cards-card-body:after {
+div.cards.pill div.cards-card-body::after {
   content: '';
   position: absolute;
   right: 24px;
@@ -246,14 +249,6 @@ div.cards.pill div.cards-card-body:after {
 
 div.cards.pill div.cards-card-body:last-of-type {
   padding-top: 32px;
-}
-
-div.cards.pill > ul {
-  width: 100%;
-  max-width: 100%;
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 @media (width >= 1024px) {
