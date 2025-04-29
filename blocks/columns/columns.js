@@ -2,6 +2,12 @@ export default function decorate(block) {
   const cols = [...block.firstElementChild.children];
   block.classList.add(`columns-${cols.length}-cols`);
 
+  // Check for black background variant from section metadata
+  const parentSection = block.closest('.section');
+  if (parentSection?.dataset.style === 'black-background') {
+    block.classList.add('black-background');
+  }
+
   // setup image columns
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
