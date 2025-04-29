@@ -4,10 +4,11 @@ export default async function decorate(block) {
   const cfg = readBlockConfig(block);
   const videoHeroContainer = document.createElement('div');
   const videoHero = document.createElement('video');
-  videoHero.setAttribute('autoplay', '');
-  videoHero.setAttribute('loop', '');
-  videoHero.setAttribute('muted', '');
   videoHero.setAttribute('playsinline', '');
+  videoHero.setAttribute('autoplay', '');
+  videoHero.setAttribute('muted', '');
+  videoHero.setAttribute('loop', '');
+  
   videoHero.classList.add('video-hero');
   const source = document.createElement('source');
   source.setAttribute('src', cfg.video);
@@ -16,20 +17,19 @@ export default async function decorate(block) {
   
   const playButton = document.createElement('button');
   playButton.className = 'video-play-button';
-  playButton.innerHTML = '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
-  playButton.addEventListener('click', () => {
-    videoHero.play();
-    playButton.style.display = 'none';
-  });
+  playButton.innerHTML = 'Play';
+  videoHero.appendChild(playButton);
   
-  videoHeroContainer.append(videoHero, playButton);
+  videoHeroContainer.append(videoHero);
   videoHeroContainer.className = 'video-hero-video';
 
+  /**
   videoHero.addEventListener('loadeddata', () => {
     videoHero.play().catch((error) => {
       console.error('Error playing video:', error);
     });
   });
+  */
   // content div container
   const contentDivContainer = document.createElement('div');
   contentDivContainer.className = 'video-hero-content-container';
