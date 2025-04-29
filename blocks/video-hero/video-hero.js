@@ -57,7 +57,7 @@ export default async function decorate(block) {
   const description = document.createElement('div');
   description.className = 'video-hero-description';
   contentDivContainer.appendChild(description);
-  const descriptionText = document.createElement('h3');
+  const descriptionText = document.createElement('h2');
   descriptionText.innerText = cfg.description;
   descriptionText.className = 'description';
   description.append(descriptionText);
