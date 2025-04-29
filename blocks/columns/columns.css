@@ -84,3 +84,21 @@ body.product-landing .columns.percent div > h3 + p > strong {
   font-variant-numeric: tabular-nums;
   -webkit-font-smoothing: antialiased;
 }
+
+/* Black background variant */
+.section.black-background {
+  background-color: black;
+  color: white;
+  padding: 2rem;
+}
+
+.section.black-background a:any-link {
+  color: #808080;
+  text-decoration: none;
+}
+
+.section.black-background a:hover {
+  color: #a0a0a0;
+  text-decoration: underline;
+}
+
