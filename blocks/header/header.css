@@ -119,7 +119,7 @@ header nav.global-nav ul li:nth-of-type(3) a::before {
   }
 }
 
-@media (max-width: 7593px) {
+@media (max-width: 759px) {
 
   header nav.global-nav {
     border-bottom: 1px solid #616166;
