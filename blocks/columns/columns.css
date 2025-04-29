@@ -86,17 +86,17 @@ body.product-landing .columns.percent div > h3 + p > strong {
 }
 
 /* Black background variant */
-.columns.black-background {
+.body.black-background {
   background-color: black;
   color: white;
   padding: 2rem;
 }
 
-.columns.black-background a:any-link {
+.body.black-background a:any-link {
   color: white;
   text-decoration: underline;
 }
 
-.columns.black-background a:hover {
+.body.black-background a:hover {
   color: #cccccc;
 }
