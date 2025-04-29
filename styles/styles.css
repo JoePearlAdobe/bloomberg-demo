@@ -217,7 +217,7 @@ pre {
 }
 
 main {
-  /* padding-top: calc(var(--nav-height) + 40px); */
+  padding-top: 30px;
 }
 
 main > div {

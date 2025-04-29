@@ -178,6 +178,37 @@ export default async function decorate(block) {
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
   const fragment = await loadFragment(navPath);
 
+  /* create global nav wrapper */
+  const globalNav = document.createElement('div');
+  globalNav.className = 'global-nav-wrapper';
+
+  const globalNavElement = document.createElement('nav');
+  globalNavElement.className = 'global-nav';
+  globalNav.append(globalNavElement);
+  const gnUl = document.createElement('ul');
+  const gnLi0 = document.createElement('li');
+  const gnLi0A = document.createElement('a');
+  gnLi0A.textContent = 'Bloomberg the Company & its Products';
+  gnLi0A.href = '#';
+  gnLi0.append(gnLi0A);
+  const gnLi1 = document.createElement('li');
+  const gnLi1A = document.createElement('a');
+  gnLi1A.textContent = 'Bloomberg Terminal Demo Request';
+  gnLi1A.href = '#';
+  gnLi1.append(gnLi1A);
+  const gnLi2 = document.createElement('li');
+  const gnLi2A = document.createElement('a');
+  gnLi2A.textContent = 'Bloomberg Anywhere Remote Login';
+  gnLi2A.href = '#';
+  gnLi2.append(gnLi2A);
+  const gnLi3 = document.createElement('li');
+  const gnLi3A = document.createElement('a');
+  gnLi3A.textContent = 'Bloomberg Customer Support';
+  gnLi3A.href = '#';
+  gnLi3.append(gnLi3A);
+  gnUl.append(gnLi0, gnLi1, gnLi2, gnLi3);
+  globalNavElement.append(gnUl);
+
   // decorate nav DOM
   block.textContent = '';
   const nav = document.createElement('nav');
@@ -235,6 +266,7 @@ export default async function decorate(block) {
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
+  block.append(globalNav);
   block.append(navWrapper);
 
   if (getMetadata('breadcrumbs').toLowerCase() === 'true') {
