@@ -94,6 +94,10 @@ body.product-landing footer div.section:nth-of-type(3) ul > li {
   font-size: 12px;
 }
 
+body.product-landing footer div.section:nth-of-type(3) ul > li a {
+  padding: 12px;
+}
+
 body.product-landing footer div.section:nth-of-type(4) img, body.product-landing footer div.section:nth-of-type(4) span {
   width: 150px;
   height: 50px;
