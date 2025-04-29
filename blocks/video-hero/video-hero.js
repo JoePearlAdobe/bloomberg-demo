@@ -4,19 +4,24 @@ export default async function decorate(block) {
   const cfg = readBlockConfig(block);
   const videoHeroContainer = document.createElement('div');
   const videoHero = document.createElement('video');
-  videoHero.setAttribute('autoplay', '');
   videoHero.setAttribute('loop', '');
   videoHero.setAttribute('muted', '');
   videoHero.setAttribute('playsinline', '');
   videoHero.classList.add('video-hero');
   const source = document.createElement('source');
-  const vbutton = document.createElement('button');
-  vbutton.innerText = 'Play';
   source.setAttribute('src', cfg.video);
   source.setAttribute('type', 'video/mp4');
   videoHero.appendChild(source);
-  videoHero.appendChild(vbutton);
-  videoHeroContainer.append(videoHero);
+  
+  const playButton = document.createElement('button');
+  playButton.className = 'video-play-button';
+  playButton.innerHTML = '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
+  playButton.addEventListener('click', () => {
+    videoHero.play();
+    playButton.style.display = 'none';
+  });
+  
+  videoHeroContainer.append(videoHero, playButton);
   videoHeroContainer.className = 'video-hero-video';
 
   videoHero.addEventListener('loadeddata', () => {

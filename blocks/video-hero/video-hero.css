@@ -87,3 +87,30 @@ div.video-hero-content-container div.video-hero-button > a.button {
     padding: 16px 24px;
     font-weight: 600;
 }
+
+.video-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-play-button svg {
+  width: 30px;
+  height: 30px;
+  fill: white;
+}
+
+.video-play-button:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
