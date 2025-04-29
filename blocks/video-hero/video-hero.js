@@ -19,6 +19,11 @@ export default async function decorate(block) {
   videoHeroContainer.append(videoHero);
   videoHeroContainer.className = 'video-hero-video';
 
+  videoHero.addEventListener('loadeddata', () => {
+    videoHero.play().catch((error) => {
+      console.error('Error playing video:', error);
+    });
+  });
   // content div container
   const contentDivContainer = document.createElement('div');
   contentDivContainer.className = 'video-hero-content-container';
