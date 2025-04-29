@@ -8,7 +8,7 @@ header .nav-wrapper {
   width: 100%;
   z-index: 20;
   position: sticky;
-  top: 30px;
+  top: 0px;
   margin-top: 0;
 }
 
@@ -57,6 +57,10 @@ header nav.global-nav ul li {
   font-weight: 600;
   position: relative;
   padding-right: 10px;
+}
+
+header div.global-nav-wrapper {
+  background-color: #000;
 }
 
 header nav.global-nav ul li::after {
