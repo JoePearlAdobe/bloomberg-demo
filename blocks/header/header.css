@@ -36,7 +36,7 @@ header nav.global-nav {
   margin: 0 auto;
   background-color: #000;
   display: block;
-  position: sticky;
+  position: relative;
   top: 0;
 }
 
@@ -105,6 +105,48 @@ header nav.global-nav ul li:nth-of-type(3) a::before {
   background-image: url('/icons/double-monitor.svg');
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+@media (max-width: 1023px) {
+  header nav.global-nav {
+    margin: 0 auto;
+    max-width: unset;
+    width: 100%;
+  }
+
+  header nav.global-nav ul {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 7593px) {
+
+  header nav.global-nav {
+    border-bottom: 1px solid #616166;
+  }
+
+  header nav.global-nav ul {
+    justify-content: flex-start;
+  }
+
+  header nav.global-nav ul li:first-of-type {
+    padding: 0 15px;
+  }
+
+  header nav.global-nav ul li:nth-of-type(3) {
+    display: none;
+  }
+
+  header nav.global-nav ul li:nth-of-type(2) {
+    display: none;
+  }
+
+  header nav.global-nav ul li:nth-of-type(4) {
+    display: none;
+  }
+  header nav.global-nav ul li::after {
+    content: unset;
+  }
 }
 
 header nav[aria-expanded='true'] {
