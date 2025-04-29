@@ -4,6 +4,7 @@ export default async function decorate(block) {
   const cfg = readBlockConfig(block);
   const videoHeroContainer = document.createElement('div');
   const videoHero = document.createElement('video');
+  videoHero.setAttribute('autoplay', '');
   videoHero.setAttribute('loop', '');
   videoHero.setAttribute('muted', '');
   videoHero.setAttribute('playsinline', '');
