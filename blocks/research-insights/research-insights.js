@@ -55,6 +55,8 @@ export default async function decorate(block) {
               img.src = mediaData[0].media_details.sizes.full.source_url;
               img.alt = post.title.rendered;
               img.className = 'research-insights-image';
+              img.width = 800;
+              img.height = 533;
               
               imageLink.appendChild(img);
               postElement.appendChild(imageLink);

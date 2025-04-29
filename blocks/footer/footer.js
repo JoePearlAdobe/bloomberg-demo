@@ -16,5 +16,24 @@ export default async function decorate(block) {
   const footer = document.createElement('div');
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
+  makeAccessible(footer);
   block.append(footer);
+}
+
+function makeAccessible(element) {
+  element.querySelectorAll('a').forEach((a) => {
+    if (a.href.includes('linkedin')) {
+      a.setAttribute('aria-label', `Bloomberg linkedin`);
+    } else if (a.href.includes('twitter')) {
+      a.setAttribute('aria-label', `Bloomberg twitter`);
+    } else if (a.href.includes('facebook')) {
+      a.setAttribute('aria-label', `Bloomberg facebook`);
+    } else if (a.href.includes('instagram')) {
+      a.setAttribute('aria-label', `Bloomberg instagram`);
+    } else if (a.href.includes('feed')) {
+      a.setAttribute('aria-label', `Bloomberg feed`);
+    } else {
+      a.setAttribute('aria-label', `Bloomberg ${a.textContent}`);
+    }
+  });
 }
