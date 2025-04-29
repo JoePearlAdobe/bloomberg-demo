@@ -10,8 +10,12 @@ export default async function decorate(block) {
   videoHero.setAttribute('playsinline', '');
   videoHero.classList.add('video-hero');
   const source = document.createElement('source');
+  const vbutton = document.createElement('button');
+  vbutton.innerText = 'Play';
   source.setAttribute('src', cfg.video);
+  source.setAttribute('type', 'video/mp4');
   videoHero.appendChild(source);
+  videoHero.appendChild(vbutton);
   videoHeroContainer.append(videoHero);
   videoHeroContainer.className = 'video-hero-video';
 
@@ -59,6 +63,4 @@ export default async function decorate(block) {
 
   block.replaceWith(videoHeroContainer);
   videoHeroContainer.insertAdjacentElement('afterend', contentDiv);
-  // contentDiv.insertBefore(videoHeroContainer, contentDiv.nextSibling);
-  // console.log(cfg); // eslint-disable-line no-console
 }
