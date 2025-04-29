@@ -472,7 +472,7 @@ body.product-landing div.section.jumplinks-black {
   position: relative;
   z-index: 5;
   margin: 0 auto;
-  background-color: black;
+  background-color: #4f4f4f;
   display: flex;
   height: 64px;
   color: white;
