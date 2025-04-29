@@ -114,4 +114,89 @@ body.black a:hover {
 
 .columns.black-background a:hover {
   color: #cccccc;
+}.columns > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.columns img {
+  width: 100%;
+}
+
+.columns > div > div {
+  order: 1;
+}
+
+.columns > div > .columns-img-col {
+  order: 0;
+}
+
+.columns > div > .columns-img-col img {
+  display: block;
+}
+
+@media (width >= 900px) {
+  .columns > div {
+    align-items: center;
+    flex-direction: unset;
+    gap: 24px;
+  }
+
+  .columns > div > div {
+    flex: 1;
+    order: unset;
+  }
+}
+
+body.product-landing .section.unsplash div.columns img {
+  border-radius: 16px;
+  box-shadow: 0 16px 24px #00000025;
+}
+
+body.product-landing .section.unsplash div.columns > div > div:first-of-type {
+  flex-basis: 280px;
+}
+
+body.product-landing .section.unsplash div.columns > div > div:first-of-type p {
+  line-height: 2.25rem;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+body.product-landing .section.unsplash div.columns > div > div:last-of-type {
+  flex-basis: 800px;
+  margin-left: 120px;
+}
+
+body.product-landing .section.unsplash a.button {
+  color: #fff;
+  background-color: #0062dd;
+  font-size: 16px;
+}
+
+body.product-landing div.section.light-gray > div + div + div {
+  font-size: 16px;
+  padding-top: 130px;
+}
+
+body.product-landing .columns.percent div {
+  text-align: center;
+}
+
+body.product-landing .columns.percent div > h3 + p {
+  text-align: center;
+  margin: 0 auto;
+}
+
+body.product-landing .columns.percent div > h3 + p + p {
+  font-size: 16px;
+} 
+
+body.product-landing .columns.percent div > h3 + p > strong {
+  color: #0062dd;
+  font-weight: 600;
+  font-size: 64px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
 }
