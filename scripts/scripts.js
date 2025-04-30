@@ -196,6 +196,9 @@ export function decorateMain(main) {
  */
 async function loadEager(doc) {
   doc.documentElement.lang = 'en';
+  if (runExperimentation) {
+    await runExperimentation(document, experimentationConfig);
+  }
   decorateTemplateAndTheme();
   if (getMetadata('breadcrumbs').toLowerCase() === 'true') {
     doc.body.dataset.breadcrumbs = true;
@@ -207,9 +210,7 @@ async function loadEager(doc) {
     await loadSection(main.querySelector('.section'), waitForFirstImage);
   }
 
-  if (runExperimentation) {
-    await runExperimentation(document, experimentationConfig);
-  }
+  
 
   sampleRUM.enhance();
 
