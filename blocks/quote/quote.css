@@ -1,7 +1,14 @@
+.quote {
+  background-color: black;
+  padding: 24px 0;
+  color: white;
+}
+
 .quote blockquote {
   margin: 0 auto;
   padding: 0 24px;
   max-width: 900px;
+  color: white;
 }
 
 @media (width >= 900px) {
@@ -21,14 +28,17 @@
 .quote blockquote .quote-quotation > :first-child::before,
 .quote blockquote .quote-quotation > :last-child::after {
   line-height: 0;
+  color: white;
 }
 
 .quote blockquote .quote-quotation > :first-child::before {
-  content: "“";
+  content: """;
+  color: white;
 }
 
 .quote blockquote .quote-quotation > :last-child::after {
-  content: "”";
+  content: """;
+  color: white;
 }
 
 .quote blockquote .quote-attribution {
@@ -38,4 +48,5 @@
 .quote blockquote .quote-attribution > :first-child::before {
   content: "—";
   padding-right: 0.5ch;
+  color: white;
 }
