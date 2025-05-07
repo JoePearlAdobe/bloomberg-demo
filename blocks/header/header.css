@@ -431,6 +431,9 @@ header nav .nav-sections a {
   header .nav-brand {
     font-size: 18px;
   }
+  body.product-landing header nav .nav-tools {
+      display: none;
+    }
 }
 /* tools */
 header nav .nav-tools {
