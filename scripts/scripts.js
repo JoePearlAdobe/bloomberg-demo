@@ -281,11 +281,6 @@ const branch = searchParams.get('nx') || 'main';
 
 export const NX_ORIGIN = 'https://da.live/nx';
 
-if (searchParams.get('dapreview')) {
-  // vh hack to work with dapreview
-  document.body.classList.add('dapreview');
-}
-
 (async function loadDa() {
   /* eslint-disable import/no-unresolved */
   if (searchParams.get('dapreview')) {
