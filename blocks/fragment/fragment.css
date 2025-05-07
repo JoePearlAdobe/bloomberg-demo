@@ -58,3 +58,28 @@ span.icon.icon-arrow-right > img {
     height: 16px;
     max-width: unset;
 }
+@media (max-width: 767px) {
+    body.product-landing main > div.section.fragment-container > div.fragment-wrapper {
+        padding: 16px 3.36%;
+        align-items: center;
+        max-width: 100%;
+    }
+
+    body.product-landing main > div.section.fragment-container > div.fragment-wrapper div.section {
+        width: 100%;
+        margin-top: unset;
+        margin-bottom: unset;
+    }
+
+    body.product-landing main > div.section.fragment-container > div.fragment-wrapper p {
+        overflow-wrap: break-word;
+    }
+
+    body.product-landing main > div.section.fragment-container > div.fragment-wrapper a {
+        text-overflow: unset;
+        overflow-wrap: break-word;
+        text-wrap-mode: wrap;
+        text-align: left;
+        line-height: 36px;
+    }
+}

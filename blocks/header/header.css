@@ -221,7 +221,7 @@ header nav .nav-hamburger-icon::before,
 header nav .nav-hamburger-icon::after {
   content: '';
   position: absolute;
-  background: currentcolor;
+  background: white;
 }
 
 header nav[aria-expanded='false'] .nav-hamburger-icon,
@@ -229,7 +229,7 @@ header nav[aria-expanded='false'] .nav-hamburger-icon::before,
 header nav[aria-expanded='false'] .nav-hamburger-icon::after {
   height: 2px;
   border-radius: 2px;
-  background: currentcolor;
+  background: white;
 }
 
 header nav[aria-expanded='false'] .nav-hamburger-icon::before {
@@ -423,6 +423,15 @@ header nav .nav-sections a {
   }
 }
 
+@media (width <= 768px) {
+  header nav {
+    grid-template: 'brand hamburger' var(--nav-height);
+  }
+  
+  header .nav-brand {
+    font-size: 18px;
+  }
+}
 /* tools */
 header nav .nav-tools {
   grid-area: tools;

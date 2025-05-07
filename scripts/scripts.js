@@ -210,8 +210,6 @@ async function loadEager(doc) {
     await loadSection(main.querySelector('.section'), waitForFirstImage);
   }
 
-  
-
   sampleRUM.enhance();
 
   try {
