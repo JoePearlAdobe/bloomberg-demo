@@ -344,7 +344,7 @@ body.product-landing div.section.unsplash {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  /* height: 100vh; */
   width: 100vw;
   max-width: 100vw;
   color: #fff;
