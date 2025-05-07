@@ -423,7 +423,8 @@ header nav .nav-sections a {
   }
 }
 
-@media (width <= 768px) {
+@media (width <= 899px) {
+
   header nav {
     grid-template: 'brand hamburger' var(--nav-height);
   }
@@ -431,10 +432,20 @@ header nav .nav-sections a {
   header .nav-brand {
     font-size: 18px;
   }
+
   body.product-landing header nav .nav-tools {
-      display: none;
-    }
+    display: none;
+  }
+
+  body.product-landing header nav.global-nav ul li {
+    font-size: 11px;
+    font-weight: 600;
+  }
+  body.product-landing header nav.global-nav ul li:nth-of-type(1) > a {
+    content: 'The Company & Its Products';
+  }
 }
+
 /* tools */
 header nav .nav-tools {
   grid-area: tools;

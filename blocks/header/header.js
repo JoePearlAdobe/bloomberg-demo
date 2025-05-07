@@ -272,4 +272,11 @@ export default async function decorate(block) {
   if (getMetadata('breadcrumbs').toLowerCase() === 'true') {
     navWrapper.append(await buildBreadcrumbs());
   }
+
+  if (window.innerWidth <= 899) {
+    block.querySelector('body.product-landing header nav.global-nav ul li:nth-of-type(1) > a').innerHTML = 'The Company & Its Products';
+    block.querySelector('body.product-landing header nav.global-nav ul li:nth-of-type(3) > a').innerHTML = 'Bloomberg Anywhere Login';
+    block.querySelector('body.product-landing header nav.global-nav ul li:nth-of-type(4) > a').innerHTML = 'Customer Support';
+  }
+  
 }

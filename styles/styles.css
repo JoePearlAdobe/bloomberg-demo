@@ -371,6 +371,12 @@ body.product-landing div.section.unsplash > div.default-content-wrapper {
   }
 }
 
+@media (width <= 899px) {
+  body.product-landing .section.unsplash div.columns.columns-2-cols > div > div:last-of-type {
+    margin-left: unset;
+  }
+}
+
 body.product-landing div.section.centered {
   text-align: center;
 }
