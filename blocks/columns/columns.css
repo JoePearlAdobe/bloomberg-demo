@@ -102,3 +102,19 @@ body.product-landing .columns.percent div > h3 + p > strong {
   text-decoration: underline;
 }
 
+/* Blue background variant */
+.section.blue-background {
+  background-color: #000012;
+  color: white;
+  padding: 2rem;
+}
+
+.section.blue-background a:any-link {
+  color: #808080;
+  text-decoration: none;
+}
+
+.section.blue-background a:hover {
+  color: #a0a0a0;
+  text-decoration: underline;
+}
