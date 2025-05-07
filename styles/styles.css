@@ -17,9 +17,9 @@
   --light-gray: #f0f0f0;
   --cultured: #f4f4f9;
   --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #000;
-  --link-hover-color: #515b85;
+  --text-color: #FFFFFF;
+  --link-color: #3391ff;
+  --link-hover-color: #66afff;
   --blue: #0073d8;
   --dark-blue: #273691;
   --teal: #006a71;
@@ -188,7 +188,7 @@ h3 { font-size: var(--heading-font-size-l); }
 
 h4 {
   font-size: var(--heading-font-size-m);
-  color: var(--blue);  /* Sets h4 text to blue color */
+  color: #1e90ff;  /* Sets h4 text to a brighter blue color for better visibility */
 }
 h5 { font-size: var(--heading-font-size-s); }
 h6 { font-size: var(--heading-font-size-xs); }
@@ -211,7 +211,7 @@ pre {
 pre {
   padding: 16px;
   border-radius: 8px;
-  background-color: var(--light-color);
+  background-color: #333333;
   overflow-x: auto;
   white-space: pre;
 }
@@ -260,7 +260,7 @@ button {
   text-align: center;
   text-decoration: none;
   background-color: #0062dd;
-  color: var(--background-color);
+  color: white;
   cursor: pointer;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -270,13 +270,14 @@ a.button:hover,
 a.button:focus,
 button:hover,
 button:focus {
-  background-color: var(--link-hover-color);
+  background-color: #0073e6;
   cursor: pointer;
 }
 
 button:disabled,
 button:disabled:hover {
-  background-color: var(--light-color);
+  background-color: #444444;
+  color: #aaaaaa;
   cursor: unset;
 }
 
@@ -328,7 +329,8 @@ main > .section:first-of-type {
 /* section metadata */
 main .section.light,
 main .section.highlight {
-  background-color: var(--light-color);
+  background-color: #333333;
+  color: var(--text-color);
   margin: 0;
   padding: 40px 0;
 }
@@ -371,7 +373,7 @@ body.product-landing div.section.jumplinks {
   position: relative;
   z-index: 5;
   margin: 0 auto;
-  background-color: #f0f0f0;
+  background-color: #333333;
   display: flex;
   height: 64px;
 }
@@ -391,7 +393,7 @@ body.product-landing div.section.jumplinks ul > li {
   height: 64px;
   margin-right: 64px;
   white-space: nowrap;
-  color: #4f4f4f;
+  color: #e0e0e0;
 }
 
 body.product-landing div.section.jumplinks ul > li > a {
@@ -572,7 +574,8 @@ body.product-landing div.section.jumplinks-black ul > li > a:hover {
 }
 
 body.product-landing div.section.cards-container {
-  background-color: white;
+  background-color: #222222;
+  color: var(--text-color);
   z-index: 5;
   position: relative;
   margin-top: 0;
@@ -599,7 +602,8 @@ body.product-landing div.default-content-wrapper > h2+p {
 }
 
 div.section.light-gray {
-  background-color: var(--light-gray);
+  background-color: #333333;
+  color: var(--text-color);
   background-size: cover;
 }
 
@@ -611,7 +615,8 @@ body.product-landing div.section.light-gray {
 body.product-landing div.section.cultured {
   margin: unset;
   padding: 40px 0;
-  background-color: var(--cultured);
+  background-color: #2a2a2a;
+  color: var(--text-color);
 }
 
 body.product-landing div.section.cultured > div.fragment-wrapper {
