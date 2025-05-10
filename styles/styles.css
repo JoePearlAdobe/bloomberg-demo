@@ -12,12 +12,12 @@
 
 :root {
   /* colors */
-   --background-color: black;
+   --background-color: rgb(4, 4, 4);
   --light-color: #f8f8f8;
   --light-gray: #f0f0f0;
   --cultured: #f4f4f9;
   --dark-color: #505050;
-  --text-color: #131313;
+  --text-color: #f8f0f0;
   --link-color: #000;
   --link-hover-color: #515b85;
   --blue: #0073d8;
@@ -265,6 +265,7 @@ button {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+/* jpearl added comment for demo purposes */
 
 a.button:hover,
 a.button:focus,

@@ -1,6 +1,8 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
+/* jpearl added comment for demo purposes */
+
 export default function decorate(block) {
   /* change to ul, li */
   const ul = document.createElement('ul');
